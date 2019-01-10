@@ -1,0 +1,191 @@
+\documentclass[12pt,letterpaper]{scrartcl}
+\usepackage[pdftex]{graphicx}
+\usepackage[numbers]{natbib}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{pslatex}
+\usepackage[colorlinks=true, pdfstartview=FitV, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+\usepackage{termcal}
+\usepackage{epigraph}
+
+% Few useful commands (our classes always meet either on Monday and Wednesday 
+% or on Tuesday and Thursday)
+
+\setlength{\epigraphwidth}{0.7\textwidth}
+
+\newcommand{\MWFClass}{%
+\calday[Monday]{\classday} % Monday
+\skipday % Tuesday (no class)
+\calday[Wednesday]{\classday} % Wednesday
+\skipday % Thursday (no class)
+\calday[Friday]{\classday} % Wednesday
+\skipday\skipday % weekend (no class)
+}
+\newcommand{\MWClass}{%
+\calday[Monday]{\classday} % Monday
+\skipday % Tuesday (no class)
+\calday[Wednesday]{\classday} % Wednesday
+\skipday % Thursday (no class)
+\skipday % Friday (no class)
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\TRClass}{%
+\skipday % Monday (no class)
+\calday[Tuesday]{\classday} % Tuesday
+\skipday % Wednesday (no class)
+\calday[Thursday]{\classday} % Thursday
+\skipday % Friday 
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\Holiday}[2]{%
+\options{#1}{\noclassday}
+\caltext{#1}{#2}
+}
+
+%%%%%%%%%% EXACT 1in MARGINS %%%%%%%                                   %%
+\setlength{\textwidth}{6.5in}     %%                                   %%
+\setlength{\oddsidemargin}{0in}   %% (It is recommended that you       %%
+\setlength{\evensidemargin}{0in}  %%  not change these parameters,     %%
+\setlength{\textheight}{9in}      %%  at the risk of having your       %%
+\setlength{\topmargin}{0in}       %%  proposal dismissed on the basis  %%
+\setlength{\headheight}{0in}      %%  of incorrect formatting!!!)      %%
+\setlength{\headsep}{0in}         %%                                   %%
+\setlength{\footskip}{.5in}       %%                                   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                   %%
+
+\title{Computer Vision\\
+CSCI 442/542\\
+Spring 2019 Syllabus}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsection*{Instructor Details}
+\begin{tabular}{l l}
+\textbf{Name:} & Douglas Brinkerhoff\\
+\textbf{Office:} & 403 Social Science Building\\
+\textbf{Email:} & \texttt{douglas1.brinkerhoff@umontana.edu}\\
+\textbf{Web: } &
+  \href{dbrinkerhoff.org}{dbrinkerhoff.org}\\
+\textbf{Office Hours:} & TWR 11:00--12:30 , SS403\\
+& \textit{Or, by appointment.}
+\end{tabular}
+
+\subsection*{Prerequisites}
+M221: Introduction to Linear Algebra (Critical), CSCI232: Data Structures, STAT341: Introduction to Probability and Statistics (Recommended, not required), or consent of instructor.  The course will be taught in python, and previous experience is useful; however, students should be able to manage with strong programming skills in any other language.  
+\subsection*{Course Objectives}
+Digital imagery is ubiquitous in the modern era, with cameras found on nearly every new car, telephone, computer, and building.  This course will introduce the ways in which these images can be used for quantitative analyses and the various ways that such products are used in contemporary technology.  Topics include the fundamentals of image formation and optics, the geometry of images, feature detection and matching, stereo vision and photogrammetry, tracking, and object detection and classification.  We will discuss techniques found in commonly used software such as facial recognition, video stabilization, and panorama generation.  We will utilize UAVs to capture aerial images, which will serve as the basis for many of the methods we discuss, as well as the basis for student group projects.  
+
+\subsection*{Student Outcomes}
+
+Upon successful completion of this course, students should have the ability to:
+\begin{itemize}
+\item Understand popular applications of computer vision in contemporary society
+\item Recognize the theoretical and practical aspects of image processing and computer vision.
+\item Implement fundamental algorithms used in the pre-processing, analysis, and post-processing of images.
+\item Understand the linkages between computer vision and artifical intelligence
+\end{itemize}
+
+\subsection*{Course Format}
+This course will be split evenly between lectures and in-class work on coding projects.  As such, a laptop will be most useful, but we can also arrange access to desktops in the classroom.  Most work will be done in groups, and thus attendance is mandatory out of respect for your classmates who will be relying on your contributions.  The course will consist of 5 substantial coding projects, and groups will be expected to give short presentations on at least one of these projects.  All course materials will be disseminated and communicated using the version control software git.  There will be no final exam. 
+
+\subsection*{Graduate Increment}
+Graduate students will be expected to participate in biweekly hour-long seminars centered around a peer-reviewed publication in Computer Vision.  In consultation with the course instructor, each graduate student will be responsible for selecting a paper and acting as the discussion leader for that paper's associated seminar.  These seminars will occur outside of the normal class meeting time, with a suitable venue and schedule to be determined. 
+\subsection*{Meeting Times/Place}
+
+\begin{tabular}{l l}
+\textbf{Times:} & TBD\\
+\textbf {Place:} & TBD\\
+\end{tabular}
+
+\subsection*{Final Exam Time and Place}
+
+\begin{tabular}{l l}
+\textbf{Time:} & TBD \\ 
+\textbf {Place:} & TBD\\
+\end{tabular}
+\subsection*{Grading Policy}
+
+\subsubsection*{Grading scale}
+Students taking the course pass/no pass are required to earn a grade of C or better in order to pass.  Pluses and minuses will be added to grades falling in the upper and lower tertile, respectively, of the following letter increments.  Note that the lower bound is inclusive, while the upper bound is exclusive.\\
+\begin{tabular}{|l|l|}
+\hline
+A & [90-100]\\
+\hline
+B & [80-90) \\
+\hline
+C & [70-80) \\
+\hline
+D & [60-70) \\
+\hline
+F & [0-60) \\
+\hline
+\end{tabular}
+
+\subsubsection*{Assessments and weights}
+The following assessments will be used and weighted according to the values in the table to determine final grades.
+
+\begin{center}
+\begin{tabular}{|p{3cm}|p{10cm}|c|c|}
+\hline
+\textbf{Component} &\textbf{Description} &  \textbf{Weight}\\
+\hline
+\hline
+Coding projects (5) & Implementation and application of algorithms in computer vision & 70\% \\ \hline
+Oral Presentations & Group presentation of one of the coding projects & 10\% \\ \hline
+Attendance and participation &  & 20\% \\ \hline
+\hline
+\end{tabular}
+\end{center}
+
+\subsection*{Textbook}
+The course will utilize the book Computer Vision: Algorithms and Applications by Richard Szeliski.  A pdf of the book is available for free at \href{http://szeliski.org/Book}{the author's website.}
+
+\section*{Tentative schedule:}
+\begin{longtable}{| l | p{6cm} | p{3cm} | p{3cm} | }
+\hline
+\textbf{Week} & \textbf{Topic} & \textbf{Assignments} & \textbf{Reading} \\
+\hline
+1 & Introduction and image formation & & Ch.1,2  \\
+2 & Image processing & Project 1 & Ch. 3 \\
+3 & Feature detection and matching &  & Ch. 4 \\
+4 & Segmentation & & Ch. 5 \\
+5 & Image alignment and stitching & Project 2 & Ch. 6,9  \\
+6 & Cont. & &  \\
+7 & Structure from motion and 3D reconstruction & & Ch.7,11,12 \\
+8 & Cont. & Project 3 &  \\
+9 & Cont. & & \\  
+10 & Optical flow and motion estimation & & Ch. 8\\
+11 & Computational photography & Project 4 & Ch. 12 \\
+12 & Facial Recognition &  & Ch. 14 \\
+13 & Object Recognition &  & \\
+14 & Object Detection and Deep Vision & Project 5 & \\
+15 & Cont.  &  & \\
+\hline
+\end{longtable}
+
+\subsection*{Attendance Policy}
+Attendance will be taken.  Students informing the instructor of a valid
+reason for missing class \textit{in advance}, via email, will not be penalized for missing class. Valid reasons include family emergencies and illness. 
+
+\subsection*{Academic Integrity}
+All students must practice academic honesty. Academic misconduct is subject to
+an academic penalty by the course instructor and/or a disciplinary sanction by
+the University. All students need to be familiar with the
+\href{http://www.umt.edu/vpsa/policies/student_conduct.php}{Student Conduct
+Code}. I will follow the guidelines given there. In cases of
+academic dishonesy, I will seek out the maximum allowable penalty. If you have
+questions about which behaviors are acceptable, especially regarding use of code  
+found on the internet or shared by your peers, please ask me.
+
+\subsection*{Disabilities}
+Students with disabilities may request reasonable modifications by contacting
+me. The University of Montana assures equal access to instruction through
+collaboration between students with disabilities, instructors, and Disability
+Services for Students. “Reasonable” means the University permits no fundamental
+alterations of academic standards or retroactive modifications. 
+
+\end{document}
